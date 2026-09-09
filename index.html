@@ -1233,6 +1233,14 @@
     }
     updateContactLinks();
 
+    /* ===== META PIXEL TRACKING ===== */
+    document.querySelectorAll('[data-contact="whatsapp"]').forEach(function(link) {
+      link.addEventListener('click', function() { fbq('track', 'Contact', {method: 'WhatsApp'}); });
+    });
+    document.querySelectorAll('[data-contact="telegram"]').forEach(function(link) {
+      link.addEventListener('click', function() { fbq('track', 'Contact', {method: 'Telegram'}); });
+    });
+
     /* ===== ADMIN PANEL ===== */
     var ADMIN_PASSWORD = 'neon2026';
 
